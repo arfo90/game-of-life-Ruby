@@ -17,6 +17,14 @@ class TestLand < Test::Unit::TestCase
   end
  end 
 
+ def test_lenght_of_empty_land_grid
+   expected_lenght = 0
+   grid = Land.new.landGrid
+   assert_nothing_raised do
+     grid[0].size == expected_lenght
+     grid[1].size == expected_lenght
+   end
+ end
 
 end
 
