@@ -21,10 +21,20 @@ class TestLand < Test::Unit::TestCase
    expected_lenght = 0
    grid = Land.new.landGrid
    assert_nothing_raised do
-     grid[0].size == expected_lenght
-     grid[1].size == expected_lenght
+    grid[0].size == expected_lenght
+    grid[1].size == expected_lenght
    end
  end
+
+ def test_seeding_world_array_size
+  world_size = 80
+  grid = Land.new(80).landGrid
+  assert_nothing_raised do
+   grid[0].size == world_size
+   grid[1].size == world_size
+  end
+ end
+
 
 end
 
