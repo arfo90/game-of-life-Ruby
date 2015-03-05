@@ -16,4 +16,11 @@ class TestSeeder < Test::Unit::TestCase
    Seeder.new(grid)
   end
  end
+
+ def test_seeder_seed_grid
+  grid = Array.new(3){Array.new(2)}
+  seeder_object = Seeder.new(grid)
+  grid = seeder_object.seeded_world
+  assert_not_nil(grid[0][1], "world is not seeded, grid must be filled in") 
+ end
 end
