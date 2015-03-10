@@ -23,4 +23,13 @@ class TestSeeder < Test::Unit::TestCase
   grid = seeder_object.seeded_world
   assert_not_nil(grid[0][1], "world is not seeded, grid must be filled in") 
  end
+
+ def test_seeder_seed_grid_randomly
+  grid = Array.new(10){Array.new(10)}
+  seeder_object = Seeder.new(grid)
+  grid = seeder_object.seeded_world
+  assert_nothing_raised do
+    raise unless grid[0][1] == "*" or grid[0][1] == "-"
+  end
+ end
 end
