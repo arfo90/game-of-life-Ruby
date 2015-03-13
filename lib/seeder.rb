@@ -1,3 +1,5 @@
+require_relative 'tools'
+
 class Seeder
  attr_accessor :land_grid
 
@@ -9,9 +11,10 @@ class Seeder
  
  def seed
   seeded_world = @land_grid
+  tools = Tools.new()
   @land_grid[0].size.times do |i|
     @land_grid[0].size.times do |j|
-     seeded_world[i][j] = '*'
+     seeded_world[i][j] = tools.rand_seed
     end  
   end
  
