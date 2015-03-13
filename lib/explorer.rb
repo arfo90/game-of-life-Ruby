@@ -6,4 +6,8 @@ class Explorer
    
     @world_grid = world_grid
   end
+  
+  def explore(state = {:Alive => true}) 
+    return 1
+  end
 end

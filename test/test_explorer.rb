@@ -18,4 +18,12 @@ class TestSeeder < Test::Unit::TestCase
     Explorer.new(@grid)
    end 
  end
+ 
+ def test_explor_method_accept_hash
+   explorer = Explorer.new(@grid)
+   assert_nothing_raised "there is an issue with passing state to explore method" do
+    state = {:alive => true}
+    alive = explorer.explore(state)
+   end 
+ end
 end 
