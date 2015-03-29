@@ -67,7 +67,7 @@ class TestSeeder < Test::Unit::TestCase
   assert_equal expected, actual, "Exploring the grid has problem, should return #{expected} instead of #{actual}"
  end
 
-
+=begin
  def test_explorer_count_alive_surrending_cells_for_first_cell
   grid = Array.new(3){Array.new(3)}
   expected = 3
@@ -81,4 +81,7 @@ class TestSeeder < Test::Unit::TestCase
   actual =  explorer.explore(x=3, y=0)
  
   assert_equal expected, actual, "Exploring the grid has problem, should return #{expected} instead of #{actual}"
+ end
+=end
+
 end
