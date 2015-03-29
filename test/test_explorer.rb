@@ -51,4 +51,34 @@ class TestSeeder < Test::Unit::TestCase
   
   assert_equal expected, actual, "Exploring the grid has problem, should return #{expected} instead of #{actual}"
  end
+
+ def test_explorer_count_alive_surrending_cells_for_first_cell
+  grid = Array.new(3){Array.new(3)}
+  expected = 3
+  grid[0].size.times do |i|
+    grid[0].size.times do |j|
+      grid[i][j] = "*"
+    end
+  end
+
+  explorer = Explorer.new(grid)
+  actual =  explorer.explore(x=0, y=0)
+ 
+  assert_equal expected, actual, "Exploring the grid has problem, should return #{expected} instead of #{actual}"
+ end
+
+
+ def test_explorer_count_alive_surrending_cells_for_first_cell
+  grid = Array.new(3){Array.new(3)}
+  expected = 3
+  grid[0].size.times do |i|
+    grid[0].size.times do |j|
+      grid[i][j] = "*"
+    end
+  end
+
+  explorer = Explorer.new(grid)
+  actual =  explorer.explore(x=3, y=0)
+ 
+  assert_equal expected, actual, "Exploring the grid has problem, should return #{expected} instead of #{actual}"
 end

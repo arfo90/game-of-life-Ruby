@@ -17,9 +17,13 @@ class Explorer
     current_x = x-1
     current_y= y-1
     total_alive = 0
+    count = 2
 
-    for i in 0..2
-     for j in 0..2
+    if x == 0
+     count = 1
+    end
+    for i in 0..count
+     for j in 0..count
        if (world_grid[current_x][current_y] = "*")
          total_alive +=1
        end
